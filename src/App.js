@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/common/Navbar';
@@ -47,7 +46,6 @@ function App() {
         <Route path="/contact" element={<ContactUs/>} />
         <Route path="/doctor-jobs" element={<DoctorJobs/>} />
         <Route path="/doctorprofile" element={<DoctorProfile/>} />
-        <Route path="/doctor-jobs" element={<DoctorJobs/>}/>
         <Route path="/groups" element={<Group/>}/>
         <Route path="/formgroups" element={<FormGroup/>}/>
       </Routes>
