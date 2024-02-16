@@ -2,6 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const AdCard = ({ ad }) => {
   const handleApply = () => {
     if (!ad || !ad.doctorDetails) {
@@ -54,6 +55,7 @@ const AdCard = ({ ad }) => {
           <p className="card-text">Ad details not available</p>
         )}
       </div>
+
     </div>
   );
 };
