@@ -23,9 +23,6 @@ const PostNewAd = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Here you would handle the submission logic, like sending the data to a server
-    // This functionality can be added later as per the requirement
-
     toast.success('Application submitted successfully!', {
       position: 'bottom-right',
       autoClose: 3000,
