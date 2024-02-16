@@ -14,27 +14,7 @@ const Group = () => {
             Leader: "Bob",
             Members: 10,
             description: "Best group "
-        }, {
-            id: 2,
-            Leader: "Bob",
-            Members: 10,
-            description: "Some description "
-        }, {
-            id: 3,
-            Leader: "Bob",
-            Members: 10,
-            description: "Colleagues "
-        }, {
-            id: 4,
-            Leader: "Bob",
-            Members: 10,
-            description: "College friends"
-        }, {
-            id: 5,
-            Leader: "Bob",
-            Members: 10,
-            description: "Surgeon Group "
-        },
+        }
     ];
 
     const handleCreateGroup = () => {
