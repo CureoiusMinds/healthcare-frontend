@@ -16,6 +16,7 @@ import Doctor from './components/doctor/Doctor';
 import HospitalJobList from './components/doctor/HospitalJobList';
 import NgoJobList from './components/doctor/NgoJobList';
 
+import AdCard from './components/hospital/AdCard';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/hospitalhome" element={<HospitalHome/>} />
         <Route path="/search-doctors" element={<DoctorSearch/>} />
         <Route path="/postnewad" element={<PostNewAd/>} />
+        <Route path="/adcard" element={<AdCard/>} />
         <Route path="/hospitalJobList" element={<HospitalJobList/>} />
         <Route path="/ngoJobList" element={<NgoJobList/>} />
         <Route path="/doctor" element={<Doctor/>} />
