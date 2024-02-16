@@ -1,23 +1,22 @@
 import React from 'react';
-import styles from './ContactUs.css'; 
 import contactUs from '../../image/undraw_contact_us_re_4qqt.svg';
 
 const ContactUs = () => {
   return (
-    <div className={styles.contact}>
-      <div className={styles.upper}>
-        <div className={styles.upperLeft}>
-          <div className={`card-shadow ${styles.imageContainer}`}>
+    <div className="container mt-4">
+      <div className="row">
+        <div className="col-md-6 col-12">
+          <div className="">
             <img src={contactUs} className='img-fluid' alt='Contact Us' />
           </div>
         </div>
-        <div className={styles.upperRight}>
-          <div className={styles.inner}>
-            <h1 className='font-weight-light mt-2'>Quick Contact</h1>
+        <div className="col-md-6 col-12">
+          <div className="text-center">
+            <h1 className='display-3'>Quick Contact</h1>
             <form>
-              <div className='row'>
-                <div className='col-md-6'>
-                  <div className='form-group mt-2'>
+            
+                <div className='my-4'>
+                  <div className='form-group'>
                     <input
                       className='form-control'
                       type='text'
@@ -25,8 +24,8 @@ const ContactUs = () => {
                     />
                   </div>
                 </div>
-                <div className='col-md-6'>
-                  <div className='form-group mt-2'>
+                <div className='my-4'>
+                  <div className='form-group'>
                     <input
                       className='form-control'
                       type='email'
@@ -34,8 +33,8 @@ const ContactUs = () => {
                     />
                   </div>
                 </div>
-                <div className='col-md-6'>
-                  <div className='form-group mt-2'>
+                <div className='my-4'>
+                  <div className='form-group'>
                     <input
                       className='form-control'
                       type='text'
@@ -43,8 +42,8 @@ const ContactUs = () => {
                     />
                   </div>
                 </div>
-                <div className='col-md-6'>
-                  <div className='form-group mt-2'>
+                <div className='my-4'>
+                  <div className='form-group'>
                     <textarea
                       className='form-control'
                       rows='3'
@@ -52,43 +51,40 @@ const ContactUs = () => {
                     ></textarea>
                   </div>
                 </div>
-                <div className='col-md-12'>
                   <button
                     type='submit'
                     className='btn btn-danger-gradiant mt-3 text-white border-0 px-3 py-2'
                   >
-                    <span> SUBMIT</span>
+                    <span className='lead'> SUBMIT</span>
                   </button>
-                </div>
-              </div>
             </form>
           </div>
         </div>
       </div>
-      <div className={styles.lower}>
-        <div className={styles.card}>
+      <div className="row">
+        <div className="col-md-4 col-12">
           <img
             src='https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon1.png'
             alt='Address'
           />
           <h6 className='font-weight-medium'>Address</h6>
-          <p>601 Sherwood Ave, San Bernardino</p>
+          <p>Hinjewadi</p>
         </div>
-        <div className={styles.card}>
+        <div className="col-md-4 col-12">
           <img
             src='https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon2.png'
             alt='Phone'
           />
           <h6 className='font-weight-medium'>Phone</h6>
-          <p>251 546 9442 | 630 446 8851</p>
+          <p>0712-6938-6312</p>
         </div>
-        <div className={styles.card}>
+        <div className="col-md-4 col-12">
           <img
             src='https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon3.png'
             alt='Email'
           />
           <h6 className='font-weight-medium'>Email</h6>
-          <p>info@wrappixel.com | 123@wrappixel.com</p>
+          <p>healtcare@gmail.com</p>
         </div>
       </div>
     </div>

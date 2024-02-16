@@ -17,7 +17,7 @@ const HospitalHome = () => {
                 contact:'no contact'
             }
         },
-        {
+        { 
             hospital:"testing",
             category:'something',
             experience:'2',
