@@ -12,6 +12,7 @@ import SignUp from './components/authentication/signup';
 import HospitalHome from './components/hospital/HospitalHome';
 import DoctorSearch from './components/hospital/DoctorSearch';
 import PostNewAd from './components/hospital/PostNewAd';
+import AdCard from './components/hospital/AdCard';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/hospitalhome" element={<HospitalHome/>} />
         <Route path="/search-doctors" element={<DoctorSearch/>} />
         <Route path="/postnewad" element={<PostNewAd/>} />
+        <Route path="/adcard" element={<AdCard/>} />
 
       </Routes>
       <ToastContainer /> 

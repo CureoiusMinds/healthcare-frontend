@@ -5,7 +5,7 @@ const HospitalSignUp = () => {
   return (
     <>
       <div>HospitalSignUp</div>
-      <Link to="/hospitalhome">
+      <Link to="/adcard">
       <button>SignUp</button>
       </Link>
     </>
