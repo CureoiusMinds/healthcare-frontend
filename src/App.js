@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/common/Navbar';
 import { ToastContainer } from 'react-toastify';
 import Footer from './components/common/Footer';
+import AboutUs from './components/common/AboutUs';
+import ContactUs from './components/common/ContactUs';
 import LoginPage from './components/authentication/Login';
 import DoctorSignUp from './components/authentication/DoctorSignUp';
 import HospitalSignUp from './components/authentication/HospitalSignUp';
@@ -36,6 +38,8 @@ function App() {
         <Route path="/hospitalJobList" element={<HospitalJobList/>} />
         <Route path="/ngoJobList" element={<NgoJobList/>} />
         <Route path="/doctor" element={<Doctor/>} />
+        <Route path="/about" element={<AboutUs/>} />
+        <Route path="/contact" element={<ContactUs/>} />
       </Routes>
       <ToastContainer /> 
       <Footer/>
