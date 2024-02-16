@@ -1,89 +1,126 @@
-import React, { useState } from "react";
-import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const HospitalSignUp = () => {
+const DoctorSignup = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    location: "",
-    specialization: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    mobileNo: '',
+    DoB: '',
+    yearsOfEx: '',
+    underGrad: '',
+    postGrad: '',
+    otherQualifications: '',
+    prevEmployment: '',
+    bioNote: '',
+    city: '',
+    state: '',
+    country: '',
+    medicalLicenseId: '',
+    specialization: ''
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Example form validation for required fields
-    if (!formData.name || !formData.location || !formData.specialization) {
-      toast.error("Please fill in all required fields");
-      return;
-    }
-
-
-    fetch("your-backend-url/hospital/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        if (response.ok) {
-          toast.success("Signup successful!");
-        } else {
-          toast.error("Signup failed. Please try again later.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        toast.error("Signup failed. Please try again later.");
-      });
+    toast.success('Signup successful!');
   };
 
   return (
-    <div className="container">
-      <h2 className="mt-4 mb-4">Hospital Sign Up</h2>
+    <div className="container mt-5">
+      <h2>Doctor Signup</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            name="name"
-            placeholder="Hospital Name"
-            value={formData.name}
-            onChange={handleChange}
-          />
+          <label className="form-label">First Name</label>
+          <input type="text" className="form-control" name="firstName" value={formData.firstName} onChange={handleChange} />
         </div>
         <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            name="location"
-            placeholder="Location"
-            value={formData.location}
-            onChange={handleChange}
-          />
+          <label className="form-label">Last Name</label>
+          <input type="text" className="form-control" name="lastName" value={formData.lastName} onChange={handleChange} />
         </div>
         <div className="mb-3">
-          <select
-            className="form-control"
-            name="specialization"
-            value={formData.specialization}
-            onChange={handleChange}
-          >
+          <label className="form-label">Email</label>
+          <input type="email" className="form-control" name="email" value={formData.email} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Password</label>
+          <input type="password" className="form-control" name="password" value={formData.password} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Mobile Number</label>
+          <input type="text" className="form-control" name="mobileNo" value={formData.mobileNo} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Date of Birth</label>
+          <input type="date" className="form-control" name="DoB" value={formData.DoB} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Years of Experience</label>
+          <input type="number" className="form-control" name="yearsOfEx" value={formData.yearsOfEx} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Undergraduate Degree</label>
+          <input type="text" className="form-control" name="underGrad" value={formData.underGrad} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Postgraduate Degree</label>
+          <input type="text" className="form-control" name="postGrad" value={formData.postGrad} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Other Qualifications</label>
+          <input type="text" className="form-control" name="otherQualifications" value={formData.otherQualifications} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Previous Employment</label>
+          <input type="text" className="form-control" name="prevEmployment" value={formData.prevEmployment} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Bio Note</label>
+          <textarea className="form-control" name="bioNote" value={formData.bioNote} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">City</label>
+          <input type="text" className="form-control" name="city" value={formData.city} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">State</label>
+          <input type="text" className="form-control" name="state" value={formData.state} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Country</label>
+          <input type="text" className="form-control" name="country" value={formData.country} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Medical License ID</label>
+          <input type="text" className="form-control" name="medicalLicenseId" value={formData.medicalLicenseId} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Specialization</label>
+          <select className="form-select" name="specialization" value={formData.specialization} onChange={handleChange}>
             <option value="">Select Specialization</option>
+            <option value="SURGERY">Surgery</option>
+            <option value="CHECK_UP">Check Up</option>
             <option value="CARDIOLOGY">Cardiology</option>
+            <option value="ONCOLOGY">Oncology</option>
             <option value="NEUROLOGY">Neurology</option>
             <option value="ORTHOPEDICS">Orthopedics</option>
+            <option value="PEDIATRICS">Pediatrics</option>
+            <option value="GYNECOLOGY">Gynecology</option>
           </select>
         </div>
-        <button type="submit" className="btn btn-primary mt-3">Sign Up</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
-      <Link to="/adcard" className="d-block mt-3">Already have an account? Log In</Link>
     </div>
   );
 };
 
-export default HospitalSignUp;
+export default DoctorSignup;
