@@ -3,8 +3,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SearchCard = ({ doctor }) => {
-  const handleRequest = () => {
-    toast.success(`Requested appointment with ${doctor.name}`);
+  const handleRequest = (hello) => {
+    toast.success(`Requested appointment with ${hello}`);
   };
 
   return (
@@ -14,7 +14,7 @@ const SearchCard = ({ doctor }) => {
         <p className="card-text">Specialization: {doctor.specialization}</p>
         <p className="card-text">Experience: {doctor.experience} years</p>
         <p className="card-text">Charge per hour: Rs.{doctor.chargePerHour}</p>
-        <button className="btn btn-primary" onClick={handleRequest}>Request Appointment</button>
+        <button className="btn btn-primary" onClick={()=>{handleRequest(doctor.name)}}>Request Appointment</button>
       </div>
     </div>
   );
