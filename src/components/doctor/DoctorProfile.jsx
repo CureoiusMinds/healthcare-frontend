@@ -3,29 +3,60 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const DoctorProfile = () => {
-  const [profileData, setProfileData] = useState({
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'johndoe@example.com',
-    mobileNo: '1234567890',
-    DoB: '1990-01-01',
-    yearsOfEx: 5,
-    underGrad: 'Bachelor of Medicine',
-    postGrad: 'Master of Surgery',
-    otherQualifications: '',
-    prevEmployment: 'Hospital ABC',
-    bioNote: 'Experienced surgeon specializing in orthopedics.',
-    city: 'New York',
-    state: 'NY',
-    country: 'USA',
-    medicalLicenseId: '123456',
-    specialization: 'ORTHOPEDICS'
-  });
-
-  const handleEdit = () => {
-    // Logic for editing profile
-    toast.info('Editing profile...');
-  };
+    const [profileData, setProfileData] = useState({
+      firstName: '',
+      lastName: '',
+      email: '',
+      mobileNo: '',
+      DoB: '',
+      yearsOfEx: '',
+      underGrad: '',
+      postGrad: '',
+      otherQualifications: '',
+      prevEmployment: '',
+      bioNote: '',
+      city: '',
+      state: '',
+      country: '',
+      medicalLicenseId: '',
+      specialization: '',
+    });
+  
+    useEffect(() => {
+      const fetchProfile = async () => {
+        try {
+          const jwtToken = sessionStorage.getItem('jwtToken');
+          const response = await axios.get('https://localhost:8443/doctor/1/profile', {
+            headers: {
+              Authorization: `Bearer ${jwtToken}`
+            }
+          });
+          setProfileData(response.data);
+        } catch (error) {
+          console.error('Failed to fetch profile:', error);
+          toast.error('Failed to fetch profile data');
+        }
+      };
+  
+      fetchProfile();
+    }, []);
+  
+    const handleEdit = async () => {
+      // Example logic for editing profile
+      try {
+        const jwtToken = sessionStorage.getItem('jwtToken');
+        await axios.put('https://localhost:8443/doctor/1/profile', profileData, {
+          headers: {
+            Authorization: `Bearer ${jwtToken}`
+          }
+        });
+        toast.info('Profile updated successfully.');
+      } catch (error) {
+        console.error('Failed to update profile:', error);
+        toast.error('Failed to update profile');
+      }
+    };
+  
 
   return (
     <div className="container mt-5">
