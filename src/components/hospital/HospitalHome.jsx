@@ -1,56 +1,48 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import axios from "axios";
 import AdCard from "./AdCard";
 
 const HospitalHome = () => {
-    const docsHos =[
-        {
-            hospital:"testing",
-            category:'something',
-            experience:'2',
-            date:'11-11-11',
-            hours:'6',
-            offerPrice:'1520',
-            doctorDetails:{
-                name:'pramit',
-                experience:'6',
-                contact:'no contact'
-            }
-        },
-        { 
-            hospital:"testing",
-            category:'something',
-            experience:'2',
-            date:'11-11-11',
-            hours:'6',
-            offerPrice:'1520',
-            doctorDetails:{
-                name:'pramit',
-                experience:'6',
-                contact:'no contact'
-            }
-        },
-        {
-            hospital:"testing",
-            category:'something',
-            experience:'2',
-            date:'11-11-11',
-            hours:'6',
-            offerPrice:'1520',
-            doctorDetails:{
-                name:'pramit',
-                experience:'6',
-                contact:'no contact'
-            }
-        }
-    ];
+  const [docsHos, setDocsHos] = useState([]);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const jwtToken = sessionStorage.getItem("jwtToken");
+        const response = await axios.get("https://localhost:8443/jobs/all", {
+          headers: {
+            Authorization: `Bearer ${jwtToken}`,
+          },
+        });
+        setDocsHos(response.data);
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+        // Handle error, e.g., show an error message
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
   return (
     <div className="container text-center">
-        <h1 className="display-3">Hospitals Pending Request List </h1>      
-        { docsHos.map((doc,index) => {
-                  return ( <AdCard key={index} hospital={doc.hospital} category={doc.category} experience={doc.experience} date={doc.date} hours={doc.hours} offerPrice={doc.offerPrice} doctorDetails={doc.doctorDetails}/>);
-        })}
-       <NavLink className="btn btn-outline-warning p-3" to={"/postnewad"}>Post New Add</NavLink> 
+      <h1 className="display-3">Hospitals Pending Request List</h1>
+      {docsHos.map((doc, index) => (
+        <AdCard
+          key={index}
+          hospital={doc.hospital}
+          category={doc.category}
+          experience={doc.experience}
+          date={doc.date}
+          hours={doc.hours}
+          offerPrice={doc.offerPrice}
+          doctorDetails={doc.doctorDetails}
+        />
+      ))}
+      <NavLink className="btn btn-outline-warning p-3" to={"/postnewad"}>
+        Post New Ad
+      </NavLink>
     </div>
   );
 };
