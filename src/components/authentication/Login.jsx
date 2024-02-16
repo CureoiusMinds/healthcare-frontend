@@ -106,7 +106,6 @@ const Login = () => {
                     </div>
              
               {/* Login Button */}
-              <button type="submit" className="btn btn-outline-success" >
               <button type="submit" className="btn btn-outline-success my-3" >
                 Log Me In
               </button>
@@ -116,7 +115,7 @@ const Login = () => {
 
       </div>
     </div>
-  );
+  ); 
 };
 
 export default Login;

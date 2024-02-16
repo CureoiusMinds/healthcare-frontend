@@ -5,7 +5,6 @@ import Navbar from './components/common/Navbar';
 import { ToastContainer } from 'react-toastify';
 import Footer from './components/common/Footer';
 import AboutUs from './components/common/AboutUs';
-import Home from './components/common/Home';
 import ContactUs from './components/common/ContactUs';
 import LoginPage from './components/authentication/Login';
 import DoctorSignUp from './components/authentication/DoctorSignUp';
@@ -18,7 +17,6 @@ import PostNewAd from './components/hospital/PostNewAd';
 import Doctor from './components/doctor/Doctor';
 import HospitalJobList from './components/doctor/HospitalJobList';
 import NgoJobList from './components/doctor/NgoJobList';
-import DoctorJobs from './components/doctor/DoctorJobs';
 
 import Home from "./components/common/Home";
 import AdCard from './components/hospital/AdCard';
