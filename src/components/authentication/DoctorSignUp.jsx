@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -117,7 +118,9 @@ const DoctorSignup = () => {
             <option value="GYNECOLOGY">Gynecology</option>
           </select>
         </div>
+        <Link to="/login">
         <button type="submit" className="btn btn-primary">Submit</button>
+        </Link>
       </form>
     </div>
   );
