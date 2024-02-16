@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import AdCard from "./AdCard";
 
 const HospitalHome = () => {
@@ -50,7 +50,7 @@ const HospitalHome = () => {
         { docsHos.map((doc,index) => {
                   return ( <AdCard key={index} hospital={doc.hospital} category={doc.category} experience={doc.experience} date={doc.date} hours={doc.hours} offerPrice={doc.offerPrice} doctorDetails={doc.doctorDetails}/>);
         })}
-
+       <NavLink className="btn btn-outline-warning p-3" to={"/postnewad"}>Post New Add</NavLink> 
     </div>
   );
 };

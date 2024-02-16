@@ -104,22 +104,7 @@ const Login = () => {
                             />
                         </div>
                     </div>
-              <div className="mb-4 text-start">
-                <label htmlFor="roleType" className="text-muted">
-                  Who are you?
-                </label>
-                <select
-                  className="form-select mt-1"
-                  name="roleType"
-                  id="roleType"
-                  value={user.roleType}
-                  onChange={handleChange}
-                >
-                  <option name="patient">Patient</option>
-                  <option name="doctor">Doctor</option>
-                  <option name="hospital">Hospital</option>
-                </select>
-              </div>
+             
               {/* Login Button */}
               <button type="submit" className="btn btn-outline-success" >
                 Log Me In

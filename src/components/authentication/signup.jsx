@@ -9,32 +9,32 @@ const Signup = () => {
   };
 
   return (
-    <div className="full-page-container d-flex align-items-center justify-content-center vh-75">
-      <div className="container">
+    <div className="full-page-container d-flex align-items-center justify-content-center" >
+      <div className="container vh-75">
         <h2 className="display-3">You Are :</h2>
         <div className="d-flex justify-content-center">
           <Link to="/docsignup">
             <button
-              className="btn btn-primary me-5"
+              className="btn btn-primary me-5 "
               onClick={() => handleOptionClick("Doctor")}
             >
-              Doctor
+              <span className="lead p-3">Doctor</span>
             </button>
           </Link>
           <Link to="/hospsignup">
             <button
-              className="btn btn-success me-5"
+              className="btn btn-success me-5 "
               onClick={() => handleOptionClick("Hospital")}
             >
-              Hospital
+              <span className="lead p-3">Hospital</span>
             </button>
           </Link>
           <Link to="/ngosignup">
             <button
-              className="btn btn-warning"
+              className="btn btn-warning "
               onClick={() => handleOptionClick("NGO")}
             >
-              NGO
+              <span className="lead p-3">NGO</span>
             </button>
           </Link>
         </div>
