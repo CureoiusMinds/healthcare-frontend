@@ -36,7 +36,7 @@ export default function Signup() {
             toast.error("Password Do Not Match!");
         else if (personal.gender === "none" || personal.gender === "")
             toast.error("Select Valid Gender");
-        else if(personal.contactNumber.length != 10)
+        else if(personal.contactNumber.length !== 10)
             toast.error("Contact Number must have 10 digits only")
         else {
             console.log(personal)

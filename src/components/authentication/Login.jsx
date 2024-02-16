@@ -1,5 +1,5 @@
 
-import sideImage from "../image/LoginImage.png"
+import sideImage from "../../image/LoginImage.png"
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios, { HttpStatusCode } from 'axios';
