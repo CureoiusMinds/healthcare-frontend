@@ -50,6 +50,7 @@ const HospitalHome = () => {
         { docsHos.map((doc,index) => {
                   return ( <AdCard key={index} hospital={doc.hospital} category={doc.category} experience={doc.experience} date={doc.date} hours={doc.hours} offerPrice={doc.offerPrice} doctorDetails={doc.doctorDetails}/>);
         })}
+
     </div>
   );
 };

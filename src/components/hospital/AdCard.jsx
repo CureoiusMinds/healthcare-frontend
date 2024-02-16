@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const AdCard = (ad) => {
+
   const handleApply = () => {
     if (!ad || !ad.doctorDetails) {
       toast.error('Doctor details not provided!', {
@@ -28,6 +29,7 @@ const AdCard = (ad) => {
       });
     }
   };
+
 
   const handleReject=()=>{
     
@@ -73,12 +75,14 @@ const AdCard = (ad) => {
             <button className="btn btn-danger " onClick={handleReject}>Reject</button>
             </div>
             </div>
+
           </>
         ) : (
           <p className="card-text">Ad details not available</p>
         )}
       </div>
     </div>
+
 
   );
 };
