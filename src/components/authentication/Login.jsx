@@ -40,7 +40,11 @@ const Login = () => {
       axios.post("https://localhost:8443/users/signin", user)
         .then((response) => {
           console.log(response.data);
-          sessionStorage.setItem("token",response.data.jwt);
+          if(response.data.mesg === "Successful Authentication!!!"){
+            sessionStorage.setItem("token",response.data.jwt);
+            navigate("/")
+          }
+
         }).catch((error) => {
           toast.error("Invalid Credentials");
         })
