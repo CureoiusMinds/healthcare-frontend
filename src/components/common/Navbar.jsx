@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+    const [user,setuser] = useState("");
+    useEffect(()=>{
+        setuser(sessionStorage.getItem("user"));
+    },[])
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light text-secondary sticky-top shadow fixed" style={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}>
       <div className="container-fluid mx-auto ">
@@ -28,12 +33,17 @@ const Navbar = () => {
             <li className="nav-item me-4">
               <NavLink className="nav-link" style={{ color: "#6c131c" }} to={"/signup"}>Sign up</NavLink>
             </li>
+            { user!=="" && (
+                <>
             <li className="nav-item me-4">
               <NavLink className="nav-link" style={{ color: "#6c131c" }} to={"/doctorprofile"}>Doctor Profile</NavLink>
             </li>
             <li className="nav-item me-4">
               <NavLink className="nav-link" style={{ color: "#6c131c" }} to={"/doctorgroups"}>Groups</NavLink>
             </li>
+                </>
+            )
+            }
           </ul>
         </div>
       </div>

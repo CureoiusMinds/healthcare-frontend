@@ -5,7 +5,6 @@ import Navbar from './components/common/Navbar';
 import { ToastContainer } from 'react-toastify';
 import Footer from './components/common/Footer';
 import AboutUs from './components/common/AboutUs';
-import Home from './components/common/Home';
 import ContactUs from './components/common/ContactUs';
 import LoginPage from './components/authentication/Login';
 import DoctorSignUp from './components/authentication/DoctorSignUp';
@@ -18,10 +17,13 @@ import PostNewAd from './components/hospital/PostNewAd';
 import Doctor from './components/doctor/Doctor';
 import HospitalJobList from './components/doctor/HospitalJobList';
 import NgoJobList from './components/doctor/NgoJobList';
-import DoctorJobs from './components/doctor/DoctorJobs';
 
+import Home from "./components/common/Home";
 import AdCard from './components/hospital/AdCard';
 import DoctorProfile from './components/doctor/DoctorProfile';
+import DoctorJobs from './components/doctor/DoctorJobs';
+import Group from './components/doctor/Group';
+import FormGroup from './components/doctor/FormGroup';
 
 function App() {
   return (
@@ -45,6 +47,7 @@ function App() {
         <Route path="/contact" element={<ContactUs/>} />
         <Route path="/doctor-jobs" element={<DoctorJobs/>} />
         <Route path="/doctorprofile" element={<DoctorProfile/>} />
+        <Route path="doctor-jobs" element={<DoctorJobs/>}/>
       </Routes>
       <ToastContainer /> 
       <Footer/>
