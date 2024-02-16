@@ -20,8 +20,10 @@ import HospitalJobList from './components/doctor/HospitalJobList';
 import NgoJobList from './components/doctor/NgoJobList';
 import DoctorJobs from './components/doctor/DoctorJobs';
 
+import Home from "./components/common/Home";
 import AdCard from './components/hospital/AdCard';
 import DoctorProfile from './components/doctor/DoctorProfile';
+import DoctorJobs from './components/doctor/DoctorJobs';
 
 function App() {
   return (
@@ -45,6 +47,7 @@ function App() {
         <Route path="/contact" element={<ContactUs/>} />
         <Route path="/doctor-jobs" element={<DoctorJobs/>} />
         <Route path="/doctorprofile" element={<DoctorProfile/>} />
+        <Route path="doctor-jobs" element={<DoctorJobs/>}/>
       </Routes>
       <ToastContainer /> 
       <Footer/>
