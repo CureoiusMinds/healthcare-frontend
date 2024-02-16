@@ -22,6 +22,8 @@ import Home from "./components/common/Home";
 import AdCard from './components/hospital/AdCard';
 import DoctorProfile from './components/doctor/DoctorProfile';
 import DoctorJobs from './components/doctor/DoctorJobs';
+import Group from './components/doctor/Group';
+import FormGroup from './components/doctor/FormGroup';
 
 function App() {
   return (
