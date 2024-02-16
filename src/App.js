@@ -47,7 +47,9 @@ function App() {
         <Route path="/contact" element={<ContactUs/>} />
         <Route path="/doctor-jobs" element={<DoctorJobs/>} />
         <Route path="/doctorprofile" element={<DoctorProfile/>} />
-        <Route path="doctor-jobs" element={<DoctorJobs/>}/>
+        <Route path="/doctor-jobs" element={<DoctorJobs/>}/>
+        <Route path="/groups" element={<Group/>}/>
+        <Route path="/formgroups" element={<FormGroup/>}/>
       </Routes>
       <ToastContainer /> 
       <Footer/>
