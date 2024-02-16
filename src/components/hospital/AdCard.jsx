@@ -14,18 +14,30 @@ const Specialization = {
 };
 
 const PostNewAd = () => {
-  const [adType, setAdType] = useState('normal');
-  const [category, setCategory] = useState('');
-  const [experience, setExperience] = useState('');
-  const [date, setDate] = useState('');
-  const [hours, setHours] = useState('');
-  const [offerPrice, setOfferPrice] = useState('');
+
+  const [ads, setAds] = useState({
+    adType: "normal",
+    category: "",
+    experience: "",
+    date: "",
+    hours: "",
+    offerPrice:""
+});
+
+
+const personalDetailChange = (e) => {
+    const { name, value } = e.target;
+    setAds((prevState) => ({
+        ...prevState,
+        [name]: value,
+    }));
+};
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     // Here you would handle the submission logic, like sending the data to a server
-
+    console.log(ads);
     toast.success('Ad posted successfully!', {
       position: 'bottom-right',
       autoClose: 3000,
@@ -43,14 +55,14 @@ const PostNewAd = () => {
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="adType">Select Ad Type:</label>
-          <select className="form-select" id="adType" value={adType} onChange={(e) => setAdType(e.target.value)}>
+          <select className="form-select" id="adType" value={adType} onChange={personalDetailChange}>
             <option value="normal">Normal Ad</option>
             <option value="group">Group Ad</option>
           </select>
         </div>
         <div className="mb-3">
           <label htmlFor="category">Category:</label>
-          <select className="form-select" id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
+          <select className="form-select" id="category" value={category} onChange={personalDetailChange}>
             {Object.values(Specialization).map((specialization, index) => (
               <option key={index} value={specialization}>{specialization}</option>
             ))}
@@ -58,19 +70,19 @@ const PostNewAd = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="experience">Experience:</label>
-          <input type="text" className="form-control" id="experience" placeholder="Enter experience" value={experience} onChange={(e) => setExperience(e.target.value)} />
+          <input type="text" className="form-control" id="experience" placeholder="Enter experience" value={experience} onChange={personalDetailChange} />
         </div>
         <div className="mb-3">
           <label htmlFor="date">Date:</label>
-          <input type="date" className="form-control" id="date" value={date} onChange={(e) => setDate(e.target.value)} />
+          <input type="date" className="form-control" id="date" value={date} onChange={personalDetailChange} />
         </div>
         <div className="mb-3">
           <label htmlFor="hours">Hours:</label>
-          <input type="number" className="form-control" id="hours" placeholder="Enter hours" value={hours} onChange={(e) => setHours(e.target.value)} />
+          <input type="number" className="form-control" id="hours" placeholder="Enter hours" value={hours} onChange={personalDetailChange} />
         </div>
         <div className="mb-3">
           <label htmlFor="offerPrice">Offer Price:</label>
-          <input type="number" className="form-control" id="offerPrice" placeholder="Enter offer price" value={offerPrice} onChange={(e) => setOfferPrice(e.target.value)} />
+          <input type="number" className="form-control" id="offerPrice" placeholder="Enter offer price" value={offerPrice} onChange={personalDetailChange} />
         </div>
         <button type="submit" className="btn btn-primary">Post Ad</button>
       </form>
