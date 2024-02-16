@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 const DoctorSignup = () => {
   const [formData, setFormData] = useState({
@@ -31,9 +32,16 @@ const DoctorSignup = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast.success('Signup successful!');
+    try {
+      const response = await axios.post('https://localhost:8443/users/doctor/signup', formData);
+      toast.success('Signup successful!');
+      console.log(response.data); // Log the response from the backend
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error('Error signing up. Please try again.');
+    }
   };
 
   return (
