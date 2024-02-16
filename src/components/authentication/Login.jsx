@@ -37,14 +37,18 @@ const Login = () => {
 
     //Patient
     if (user.roleType === "Patient") {
-    //   axios.post("http://localhost:8080/jobseeker/Patient", user)
-    //     .then((response) => {
-    //       console.log(response.data);
-    //     }).catch((error) => {
-    //       toast.error("Invalid Credentials");
-    //     })
-    }
+      axios.post("https://localhost:8443/users/signin", user)
+        .then((response) => {
+          console.log(response.data);
+          if(response.data.mesg === "Successful Authentication!!!"){
+            sessionStorage.setItem("token",response.data.jwt);
+            navigate("/")
+          }
 
+        }).catch((error) => {
+          toast.error("Invalid Credentials");
+        })
+    }
     //Doctor
     else if (user.roleType === "Doctor") {
      
@@ -98,7 +102,7 @@ const Login = () => {
                                 id="password"
                                 name="password"
                                 onChange={handleChange}
-                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\s])(?=.*[\S])[^\s]{8,}$"
+                                // pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\s])(?=.*[\S])[^\s]{8,}$"
                                 title="Password must contain at least one uppercase letter, one lowercase letter, one digit, and no spaces"
                                 required
                             />
