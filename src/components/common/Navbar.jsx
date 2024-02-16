@@ -28,6 +28,12 @@ const Navbar = () => {
             <li className="nav-item me-4">
               <NavLink className="nav-link" style={{ color: "#6c131c" }} to={"/signup"}>Sign up</NavLink>
             </li>
+            <li className="nav-item me-4">
+              <NavLink className="nav-link" style={{ color: "#6c131c" }} to={"/doctorprofile"}>Doctor Profile</NavLink>
+            </li>
+            <li className="nav-item me-4">
+              <NavLink className="nav-link" style={{ color: "#6c131c" }} to={"/doctorgroups"}>Groups</NavLink>
+            </li>
           </ul>
         </div>
       </div>
