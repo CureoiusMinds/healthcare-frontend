@@ -33,7 +33,7 @@ const JobCard = (prop) => {
             </div>
             <div className='col-md-4 col-12'>
                <h1 className='lead'> Required Doctors : {prop.required}</h1>
-               <button className='btn btn-success' onClick={handleAccept}>Accept job</button>
+               <button className='btn btn-success' onClick={handleAccept}>Apply job</button>
             </div>
 
         </div>
