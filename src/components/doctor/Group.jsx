@@ -7,6 +7,7 @@ import JobCard from "./JobCard";
 import GroupCard from "./GroupCard";
 
 const Group = () => {
+    const navigate = useNavigate();
     const groupsData = [
         {
             id: 1,
@@ -37,7 +38,7 @@ const Group = () => {
     ];
 
     const handleCreateGroup = () => {
-
+            navigate("/formgroups");
     }
 
     console.log(groupsData);

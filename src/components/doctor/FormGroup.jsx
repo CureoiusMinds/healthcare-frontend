@@ -28,7 +28,7 @@ const FormGroup = () => {
   };
 
   return (
-    <div className='container'>
+    <div className='container' style={{marginTop:"100px",marginBottom:"100px"}}>
       <div className='mb-3'>
         <label htmlFor='description' className='form-label'>
           Description
@@ -56,7 +56,7 @@ const FormGroup = () => {
               Search
             </button>
             {/* Simulate adding a searched doctor */}
-            <button className='btn btn-success ml-2' type='button' onClick={handleAddDoctorToList}>
+            <button className='btn btn-success' type='button' onClick={handleAddDoctorToList}>
               Add Member
             </button>
           </div>
@@ -64,7 +64,7 @@ const FormGroup = () => {
       )}
 
       {doctors.length > 0 && (
-        <button className='btn btn-success mt-3' onClick={handleCreateGroup}>
+        <button className='btn btn-success ms-3' onClick={handleCreateGroup}>
           Create Group
         </button>
       )}
